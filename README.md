@@ -1,6 +1,6 @@
-# Postaway
+# PosyAway
 
-Postaway is a small social-networking project built with Node.js, Express, and ES modules. It includes an in-memory API and a responsive browser client for sharing posts, images, comments, likes, and bookmarks.
+PosyAway is a small social-networking project built with Node.js, Express, and ES modules. It includes an in-memory API and a responsive browser client for sharing posts, images, comments, likes, and bookmarks.
 
 ## Run locally
 
@@ -47,3 +47,4 @@ The API separates route definitions, controllers, models, and in-memory data. Re
 ```sh
 npm test
 ```
+

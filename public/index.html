@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f2f1eb" />
+    <title>Postaway — a little more social</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" type="module"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="/" aria-label="Postaway home"><span class="brand-mark">p.</span>postaway</a>
+      <span class="top-note">YOUR PEOPLE, IN THE MOMENT <i></i></span>
+      <button class="account-button" id="account-button" type="button">Sign in <span aria-hidden="true">↗</span></button>
+    </header>
+
+    <main class="layout">
+      <aside class="rail" aria-label="Feed navigation">
+        <div class="rail-label">YOUR SPACE</div>
+        <button class="rail-link is-active" data-view="feed" type="button"><span>◷</span> The feed</button>
+        <button class="rail-link" data-view="saved" type="button"><span>⌑</span> Saved posts</button>
+        <div class="rail-rule"></div>
+        <p class="rail-copy">A good post is a small window into someone else's day.</p>
+        <div class="rail-stamp">PSTW / 001<br />EST. RIGHT NOW</div>
+      </aside>
+
+      <section class="feed-column" aria-label="Postaway feed">
+        <div class="feed-heading">
+          <div><div class="eyebrow" id="feed-eyebrow">THE COMMUNITY</div><h1 id="feed-title">The feed<span class="title-period">.</span></h1></div>
+          <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Find a moment" aria-label="Search posts" /></label>
+        </div>
+
+        <section class="composer" id="composer" hidden>
+          <div class="composer-top"><span class="composer-avatar" id="composer-avatar">P</span><div><strong>Put something out there.</strong><span>Text, a moment, a little window.</span></div><span class="composer-index">01 / SHARE</span></div>
+          <form id="post-form">
+            <textarea name="caption" maxlength="2000" placeholder="What's on your mind?" aria-label="Post caption" required></textarea>
+            <div class="composer-actions"><label class="upload-button" for="image-input">＋ <span>Add an image</span><input id="image-input" name="image" type="file" accept="image/png,image/jpeg,image/gif,image/webp" /></label><span class="upload-name" id="upload-name"></span><button class="publish-button" type="submit">Share post <span>↗</span></button></div>
+          </form>
+        </section>
+
+        <div class="feed-meta"><span id="feed-count">LATEST NOTES</span><label class="sort-control">SORT <select id="sort-select" aria-label="Sort posts"><option value="recent">Recent</option><option value="popular">Popular</option></select></label></div>
+        <div id="feed-list" class="feed-list" aria-live="polite"></div>
+        <button class="load-more" id="load-more" type="button" hidden>Load older posts <span>↓</span></button>
+      </section>
+
+      <aside class="right-column">
+        <div class="right-intro"><div class="orbit-mark">p<span>✳</span></div><div class="eyebrow">A PLACE TO LAND</div><p>Life happens<br />between the big<br />announcements.</p></div>
+        <div class="right-bottom"><span>MADE FOR THE IN-BETWEEN</span><span>© POSTAWAY <b>●</b></span></div>
+      </aside>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <dialog class="auth-dialog" id="auth-dialog">
+      <button class="dialog-close" type="button" aria-label="Close">×</button>
+      <div class="dialog-kicker">COME ON IN</div><h2 id="auth-title">Good to see you.</h2><p class="dialog-subtitle">Your corner of the community is right here.</p>
+      <form id="auth-form">
+        <label class="auth-field" id="name-field"><span>YOUR NAME</span><input name="name" autocomplete="name" placeholder="How should we call you?" /></label>
+        <label class="auth-field"><span>EMAIL ADDRESS</span><input name="email" type="email" autocomplete="email" placeholder="you@example.com" required /></label>
+        <label class="auth-field"><span>PASSWORD</span><input name="password" type="password" autocomplete="current-password" minlength="8" placeholder="At least 8 characters" required /></label>
+        <button class="dialog-submit" type="submit" id="auth-submit">Sign in <span>↗</span></button>
+      </form>
+      <button class="mode-switch" id="mode-switch" type="button">New here? <u>Create an account</u></button>
+      <p class="dialog-error" id="auth-error" role="alert"></p>
+    </dialog>
+  </body>
+</html>

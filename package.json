@@ -1,0 +1,24 @@
+{
+  "name": "postaway",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "An in-memory social network API and browser client built with Express and Node.js.",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test",
+    "test:watch": "node --test --watch"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
+    "multer": "^2.0.2"
+  }
+}
